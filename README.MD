@@ -9,10 +9,10 @@
 - Works. Test prompt setup succeeded with two prompts and one bug fix..
 - This is apparently the best at coding (according to Aider devs) 
 - Did the job, maybe it is the best, but LLAMA 8B is also fine. 
-4. Star Coder in Ollama running locally on Laptop CPU (Slow) Let's try this lol
+4. Some LLM's in Ollama running locally on Laptop CPU (Slow) Let's try this lol
 - yi-coder is just too slow
 - Mistral 7B is going to shut my computer down in a minute. My music is stuttering.... takes 20 min in my experience to do anything at all. Why bother (on CPU)
-- Last try with "TinyLLAMA": It might work.. on GPU or TPU. Nope. The LLM did not conform to the edit format.
+- Last try with "TinyLLAMA": It might work.. on GPU or TPU. Nope. The LLM did not conform to the edit format. 
 
 # Test of paid LLM's (some of these are much more capable than the above..) 
 1. 
