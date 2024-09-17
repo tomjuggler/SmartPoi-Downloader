@@ -3,9 +3,13 @@
 1. LLama 3.1 (Via OpenRouter) openrouter/meta-llama/llama-3-8b-instruct:free 
 - Works. Test project setup succeeded with one prompt! 
 - For simple projects, this LLM does a great job. It's helpful for setting things up and basic boilerplate code. 
-2. Mistral openrouter/mistralai/mistral-7b-instruct:free
-3. Gemini (Free for now, from Google)
-4. Star Coder in Ollama running locally on Laptop CPU (Slow)
+2. Mistral openrouter/mistralai/mistral-7b-instruct:free 
+- didn't work at all! Maybe there is another Mistral version that does? 
+3. Gemini (Free for now, from Google) gemini/gemini-1.5-pro-latest
+- Works. Test prompt setup succeeded with two prompts and one bug fix..
+- This is apparently the best at coding (according to Aider devs) 
+- Did the job, maybe it is the best, but LLAMA 8B is also fine. 
+4. Star Coder in Ollama running locally on Laptop CPU (Slow) Let's try this lol
 
 # Test of paid LLM's (some of these are much more capable than the above..) 
 1. 
