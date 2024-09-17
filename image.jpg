@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+
+    <title>            skye everest
+ | Visual poi ZONE</title>
+
+    <meta property="og:title" content="skye everest | Visual Poi Zone.">
+    <meta property="og:description" content="Pattern by Matúš Uherčík. ">
+    <meta property="og:image" content="http://www.visualpoi.zone//assets/pattern/x120/o2hv4p3eikd7.jpg">
+
+
+    <script type="text/javascript">document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main.css?version=5">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width">
+    
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/css/iefix.css">
+    <script src="/js/ie/html5shiv.js"></script>
+    <script src="/js/ie/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-main navbar-inverse navbar-fixed-top">
+    <div class="blue-line"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" alt="Visual poi zone" title="Visual poi zone">
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-right navbar-collapse">
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="" href="https://www.lighttoys.cz/product-category/vpoi/#all-products"><i class="glyphicon glyphicon-shopping-cart mr10"></i> Buy Visual poi</a>
+                </li>
+            </ul>
+
+                    <div class="search navbar-left hidden-sm hidden-xs">
+            <form class="navbar-form search-form patterns authors" action="/pattern/show/6454" method="post" autocomplete="off" id="frm-searchForm">
+
+                <input placeholder="Search for patterns..." class="form-control" type="text" name="text" id="frm-searchForm-text">
+
+                <button class="search-btn" type="submit" name="send"><i class="glyphicon glyphicon-search"></i></button>
+
+            <input type="hidden" name="do" value="searchForm-submit"><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]-->
+</form>
+            <div class="search-suggestions initial">
+                <ul id="searchSuggestions">
+                    <li class="template"><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+            <ul class="nav navbar-nav">
+                <li><a href="/pattern/">Patterns</a></li>
+                <li><a class="hidden-sm hidden-md" href="https://drive.google.com/drive/u/2/folders/1XZBEiS09zTef_D1jEUDpjq0AHeVykfTi?fbclid=IwAR0gHivIsrHH1030xrRUtsZlFCus0njs8HkYt-GfbAy5aOBeZ44wiAA2_zc" target="_blank">Programs</a></li>
+                <li><a href="/authors/">Authors</a></li>
+
+
+                    <li class="visible-xs">
+                        <a href="/sign/up">Register</a>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="/sign/in">Login</a>
+                    </li>
+            </ul>
+
+            <a class="btn navbar-btn btn-navbar navbar-right" href="/pattern/create">
+                <i class="glyphicon glyphicon-cloud-upload mr10"></i> Upload
+            </a>
+
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li class="stretch">
+
+                        <a href="/sign/">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="caret"></span>
+                        </a>
+
+                    <div class="submenu">
+
+                            <div class="pull-left">
+                                <a class="btn btn-pink" href="/sign/up">Register</a>
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-primary" href="/sign/in">Login</a>
+                            </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+<div class="flashes" id="snippet--flashes">
+    <br>
+</div>
+
+<div id="scrollTop" class="on-top">
+    <i class="glyphicon glyphicon-chevron-up"></i>
+</div>
+
+
+    <div class="strip strip-pattern" style="background-image:url('/assets/pattern/x120/o2hv4p3eikd7.jpg');"></div>
+
+
+<div class="container main-content page-single-pattern">
+
+    <div class="row">
+        <div class="col-md-7 box">
+
+                        <h1 class="pattern-title">skye everest</h1>
+            
+                        <div class="tags mb25">
+                <a class="badge pattern-type" href="/patterns/?type=pattern">pattern</a>
+
+
+                <a class="badge tag" href="/patterns/?query=paw+patrol">
+                    paw patrol
+                </a>
+            </div>
+
+            <div class="icon-row">
+                                <span class="author pull-left-sm mb25">
+                                                                <img class="img-circle mr5" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                        <a class="mr5" href="/profile/9608">Matúš Uherčík</a>
+                        <span class="mr5"> on </span>
+                        <strong class="light-gray " title="3 months ago">2024/06/18</strong>
+                    </span>
+
+                <div class="clearfix"></div>
+            </div>
+
+
+
+
+
+                        <div class="download-links">
+
+                    <a class="btn btn-primary" href="/sign/in?backlink=eg0bg">Sign in to download pattern</a>
+
+                <span class="ml10">
+                <i class="glyphicon glyphicon-resize-vertical"></i>
+                    <strong>
+                        <span class="light-gray" title="Height">200px</span>
+                    </strong>
+                    </span>
+
+
+                <div class="rating pull-right-sm" id="snippet--rating">
+
+                    <span class="action white glyphicon glyphicon-arrow-down"></span>
+                    <span class="count positive">5</span>
+
+                    <span class="ajax-rate" data-link="/pattern/show/6454?patternId=6454&amp;do=addRating">
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span></span>
+                    <span class="count positive">0</span>
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="mb25 visible-xs"></div>
+
+
+                        <div class="pattern-preview">
+                <img alt="skye everest" id="patternImage" class="hidden" data-type="pattern" src="/assets/pattern/original/o2hv4p3eikd7.jpg">
+                <span id="patternIdStorage" data-id="6454"></span>
+
+                <canvas id="roundPattern" height="500" width="500"></canvas>
+                <div id="roundImage" class="round-image">
+                    <img src="/assets/round/original/6454.jpg">
+                </div>
+
+                                                <button id="animationPlay" class="animation-control" onclick="toggleAnimationState()">
+                    <i class="glyphicon glyphicon-play"></i>
+                    <i class="glyphicon glyphicon-pause hidden"></i>
+                    Animation
+                </button>
+                                
+            </div>
+
+
+                        <h2 class="white">Comments</h2>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+
+                            <p class="mb50">Please <a href="/sign/in?backlink=eg0bg">
+                                    sign in</a> to add comments.</p>
+                    <div class="comments mb25" id="snippet--comments">
+                     </div>
+                </div>
+            </div>
+
+        </div> 
+
+                <aside id="sidebar" class="col-md-4 col-md-offset-1 box">
+            <h2>More from this author</h2>
+                <div class="row by-author">
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6457">
+        <div class="image" style="background-image:url(/assets/pattern/x100/j2fcpeg96xtl.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="unicorn round preview" src="/assets/round/400x/6457.jpg">
+                </div>
+                <h3>unicorn</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6457-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">13</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6457-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6457-patternId=6457&amp;patternPreview-6457-rating=1&amp;do=patternPreview-6457-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6455">
+        <div class="image" style="background-image:url(/assets/pattern/x100/lzgwtw4j2zez.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="batman round preview" src="/assets/round/400x/6455.jpg">
+                </div>
+                <h3>batman</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6455-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">12</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6455-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6455-patternId=6455&amp;patternPreview-6455-rating=1&amp;do=patternPreview-6455-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6453">
+        <div class="image" style="background-image:url(/assets/pattern/x100/z9fi7tyi0ozp.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="rocky zuma round preview" src="/assets/round/400x/6453.jpg">
+                </div>
+                <h3>rocky zuma</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6453-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">2</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6453-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6453-patternId=6453&amp;patternPreview-6453-rating=1&amp;do=patternPreview-6453-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6452">
+        <div class="image" style="background-image:url(/assets/pattern/x100/qr266vntffbh.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="Chase round preview" src="/assets/round/400x/6452.jpg">
+                </div>
+                <h3>Chase</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6452-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">8</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6452-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6452-patternId=6452&amp;patternPreview-6452-rating=1&amp;do=patternPreview-6452-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6451">
+        <div class="image" style="background-image:url(/assets/pattern/x100/tcfv69cow5s3.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="frozen round preview" src="/assets/round/400x/6451.jpg">
+                </div>
+                <h3>frozen</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6451-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">7</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6451-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6451-patternId=6451&amp;patternPreview-6451-rating=1&amp;do=patternPreview-6451-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                    <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/6450">
+        <div class="image" style="background-image:url(/assets/pattern/x100/bibas3cruv0q.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="Ladybug round preview" src="/assets/round/400x/6450.jpg">
+                </div>
+                <h3>Ladybug</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/9608_profile.jpg">
+                    <span class="name">Matúš Uherčík</span></div>
+
+<div id="snippet-patternPreview-6450-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">3</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-6450-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-6450-patternId=6450&amp;patternPreview-6450-rating=1&amp;do=patternPreview-6450-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                    </div>
+                </div>
+            <a class="pull-right light-gray " href="/profile/9608">visit author's profile ➔</a>
+            <div class="clearfix"></div>
+
+
+                <h2>Related Patterns</h2>
+
+                <div class="related">
+
+                    <div data-ajax-append="true" id="snippet--related">
+                        <div class="row">
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/3863">
+        <div class="image" style="background-image:url(/assets/pattern/x100/hta2tnup34ev.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="Paw Patrol round preview" src="/assets/round/400x/3863.jpg">
+                </div>
+                <h3>Paw Patrol</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/1525_profile.jpg">
+                    <span class="name">Rhys</span></div>
+
+<div id="snippet-patternPreview-3863-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">44</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+4</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-3863-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-3863-patternId=3863&amp;patternPreview-3863-rating=1&amp;do=patternPreview-3863-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5425">
+        <div class="image" style="background-image:url(/assets/pattern/x100/02x9vp19hgq1.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol everest round preview" src="/assets/round/400x/5425.jpg">
+                </div>
+                <h3>paw patrol everest</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5425-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">11</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5425-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5425-patternId=5425&amp;patternPreview-5425-rating=1&amp;do=patternPreview-5425-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5426">
+        <div class="image" style="background-image:url(/assets/pattern/x100/3cawqvbc19rl.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol marashal round preview" src="/assets/round/400x/5426.jpg">
+                </div>
+                <h3>paw patrol marashal</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5426-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">17</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5426-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5426-patternId=5426&amp;patternPreview-5426-rating=1&amp;do=patternPreview-5426-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5427">
+        <div class="image" style="background-image:url(/assets/pattern/x100/2972tsygkaes.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol rocky round preview" src="/assets/round/400x/5427.jpg">
+                </div>
+                <h3>paw patrol rocky</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5427-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">7</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+1</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5427-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5427-patternId=5427&amp;patternPreview-5427-rating=1&amp;do=patternPreview-5427-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5428">
+        <div class="image" style="background-image:url(/assets/pattern/x100/31akmv9rrh6o.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol skye round preview" src="/assets/round/400x/5428.jpg">
+                </div>
+                <h3>paw patrol skye</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5428-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">9</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5428-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5428-patternId=5428&amp;patternPreview-5428-rating=1&amp;do=patternPreview-5428-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5429">
+        <div class="image" style="background-image:url(/assets/pattern/x100/tx7tion8yw7f.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol rumble round preview" src="/assets/round/400x/5429.jpg">
+                </div>
+                <h3>paw patrol rumble</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5429-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">9</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+1</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5429-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5429-patternId=5429&amp;patternPreview-5429-rating=1&amp;do=patternPreview-5429-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5430">
+        <div class="image" style="background-image:url(/assets/pattern/x100/qo5ctgp76dm2.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol shield chase round preview" src="/assets/round/400x/5430.jpg">
+                </div>
+                <h3>paw patrol shield chase</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5430-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">5</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5430-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5430-patternId=5430&amp;patternPreview-5430-rating=1&amp;do=patternPreview-5430-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5431">
+        <div class="image" style="background-image:url(/assets/pattern/x100/ro9rj16hsuwo.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw partol shield everest round preview" src="/assets/round/400x/5431.jpg">
+                </div>
+                <h3>paw partol shield everest</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5431-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">3</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5431-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5431-patternId=5431&amp;patternPreview-5431-rating=1&amp;do=patternPreview-5431-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5432">
+        <div class="image" style="background-image:url(/assets/pattern/x100/0u9a2q4yman4.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol shield marshal round preview" src="/assets/round/400x/5432.jpg">
+                </div>
+                <h3>paw patrol shield marshal</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5432-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">4</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5432-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5432-patternId=5432&amp;patternPreview-5432-rating=1&amp;do=patternPreview-5432-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                            <div class="col-xs-6">
+<div class="pattern">
+    <a href="/pattern/show/5433">
+        <div class="image" style="background-image:url(/assets/pattern/x100/s4hodho4m77a.jpg);">
+            <div class="preview">
+                <div class="preview-image">
+                <img class="round-thumbnail" alt="paw patrol shield rocky round preview" src="/assets/round/400x/5433.jpg">
+                </div>
+                <h3>paw patrol shield rocky</h3>
+                <div class="author pull-left">
+                        <img class="img-circle mr10" alt="Profile photo" src="/assets/users/30x30_8/2938_profile.jpg">
+                    <span class="name">House Karl</span></div>
+
+<div id="snippet-patternPreview-5433-rating">                    <div class="rating pull-right">
+                        <span class="action negative white glyphicon glyphicon-arrow-down"></span>
+                        <span class="count positive">3</span>
+
+                        <span class="action negative not--positive glyphicon glyphicon-heart"></span>
+                        <span class="count positive">+0</span>
+                    </div>
+</div>
+                                <div class="clearfix"></div>
+            </div>
+        </div>
+    </a>
+    <div class="clearfix"></div>
+<div id="snippet-patternPreview-5433-ratingControls">        <div class="rate">
+            <span class="ajax-rate control negative not--positive" data-ajax-off="history" data-link="/pattern/show/6454?patternPreview-5433-patternId=5433&amp;patternPreview-5433-rating=1&amp;do=patternPreview-5433-addRating">
+                <span class="glyphicon glyphicon-heart"></span>
+            </span>
+        </div>
+</div></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="js pagination" id="snippet--relatedPagination">
+                        <nav>
+                            <div class="text-center">
+
+                                <a class="btn btn-primary next" data-loading-text="Loading..." data-ajax-off="history" href="/pattern/show/6454?relatedPage=2">
+                                    +10 more
+                                </a>
+
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+        </aside>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 text-center-sm-max">
+                <a href="https://www.lighttoys.cz"><img src="/images/logo_lighttoys.png" alt="Logo Pyroterra Lighttoys"></a>
+                <div class="space-xs"></div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-md-offset-1 text-center-sm-max">
+                <div class="row white statistics">
+                    <div class="col-lg-6 count-patterns">
+                        <p><span class="biggest">5817</span> graphics</p>
+                    </div>
+                    <div class="col-lg-6 count-users">
+                        <p><span class="big">8036</span> community members </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb50">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-6 text-center-sm-max">
+                        Find us on social sites:
+                        <div class="mt25">
+                            <a class="white medium" href="http://www.lighttoys.cz">www.lighttoys.cz</a><br>
+                            <a class="white medium" href="http://www.pyroterra.cz">www.pyroterra.cz</a>
+                        </div>
+                        <div class="mt25">
+                            <a class="white medium" href="mailto:eshop@pyroterra.cz">eshop@pyroterra.cz</a>
+                        </div>
+                        <br class="visible-xs visible-sm">
+                    </div>
+                    <div class="col-md-6 text-center-sm-max">
+                        <a href="https://www.facebook.com/pyroterralighttoys/" class="social-button facebook mb10">facebook</a>
+                        <a href="https://twitter.com/pyroterralt" class="social-button twitter mb10">twitter</a>
+                        <a href="https://www.youtube.com/user/FireshowPyroterra" class="social-button youtube mb10">youtube</a>
+                        <a href="https://www.instagram.com/explore/tags/pyroterra/" class="social-button instagram mb10">instagram</a>
+                    </div>
+                    <br class="visible-xs visible-sm">
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-2">
+                <p>Visual Poi Zone is a platform for all the artists, customers or lovers of Pyroterra Lighttoys <a href="https://www.lighttoys.cz/product-category/vpoi/#all-products">Visual
+                        Poi</a>.</p>
+
+                <p>All the graphics are free of charge and ready to make your day with Visual Poi better.</p>
+
+                                                                                                                                    </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p><a class="white" href="https://www.pyroterra.cz">Pyroterra s.r.o.</a> (Pyroterra Lighttoys) 
+                | <a class="white" href="https://visualpoi.zone/privacypolicy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+<script>ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;ga('create','UA-86171588-1','auto');ga('send','pageview');</script>
+
+
+        <script src="/js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="/js/vendor/netteForms.min.js"></script>
+    <script src="/js/vendor/nette.ajax.js"></script>
+    <script src="/js/vendor/history.nette.ajax.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/main.js?version=3"></script>
+
+    <script src="/js/animation.js"></script>
+    <script type="text/javascript">var animationCreated=false;$("#patternImage").on('load',function(){window.animation=new Animation(document.getElementById('roundPattern'),document.getElementById('patternImage'));}).each(function(){if(this.complete)$(this).load();});var roundImage=$("#roundImage");function toggleAnimationState(){roundImage.toggle();animation.togglePlayState();}function confirmDelete(){return confirm("Deletion of the pattern cannot be rolled back. Do you want to delete it anyway?");}function confirmDeleteComment(){return confirm("Really delete the comment?");}$('#animationPlay').click(function(){$(this).find('i').toggleClass('hidden');});</script>
+
+
+
+</body>
+</html>

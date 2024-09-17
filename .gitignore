@@ -1,0 +1,6 @@
+.conda/
+conda_env/
+project/__pycache__/*
+.aider*
+__pycache__/*
+
