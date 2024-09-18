@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <input type="number" id="led_pin" value="13">
     <input type="text" id="data_pin" value="D2">
     <input type="text" id="clock_pin" value="D1">
     <button onclick="generateProject()">Generate Arduino Project</button>
     <script>
       function generateProject() {
-        var ledPin = document.getElementById('led_pin').value;
         var dataPin = document.getElementById('data_pin').value;
         var clockPin = document.getElementById('clock_pin').value;
-        fetch('/generate_project', {method: 'POST', body: new URLSearchParams({led_pin: ledPin, data_pin: dataPin, clock_pin: clockPin})})
-    .then(response => response.blob())
-    .then(blob => {
+        fetch('/generate_project', {method: 'POST', body: new URLSearchParams({data_pin: dataPin, clock_pin: clockPin})})
+   .then(response => response.blob())
+   .then(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
