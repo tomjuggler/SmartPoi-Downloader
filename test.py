@@ -29,13 +29,16 @@ class TestGenerateProject(unittest.TestCase):
 
             # Check that the zip file contains the expected files
             zip_file = zipfile.ZipFile(BytesIO(response.get_data()))
-            self.assertIn('main/main.ino', zip_file.namelist())
+            try:
+                self.assertIn('main/main.ino', zip_file.namelist())
 
-            # Check that the main.ino file contains the expected values
-            with zip_file.open('main/main.ino') as f:
-                lines = [line.decode('utf-8').strip() for line in f.readlines()]
-                self.assertIn(f'#define DATA_PIN {data_pin}', lines)
-                self.assertIn(f'#define CLOCK_PIN {clock_pin}', lines)
+                # Check that the main.ino file contains the expected values
+                with zip_file.open('main/main.ino') as f:
+                    lines = [line.decode('utf-8').strip() for line in f.readlines()]
+                    self.assertIn(f'#define DATA_PIN {data_pin}', lines)
+                    self.assertIn(f'#define CLOCK_PIN {clock_pin}', lines)
+            finally:
+                zip_file.close()
 
 if __name__ == '__main__':
     unittest.main()
