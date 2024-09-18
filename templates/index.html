@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <input type="number" id="led_pin" value="13">
     <button onclick="generateProject()">Generate Arduino Project</button>
     <script>
       function generateProject() {
-        fetch('/generate_project', {method: 'POST'})
-         .then(response => response.blob())
-         .then(blob => {
+        var ledPin = document.getElementById('led_pin').value;
+        fetch('/generate_project', {method: 'POST', body: 'led_pin=' + ledPin})
+        .then(response => response.blob())
+        .then(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;

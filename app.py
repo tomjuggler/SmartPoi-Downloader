@@ -1,6 +1,5 @@
-from flask import Flask, render_template, send_file, jsonify
+from flask import Flask, render_template, send_file, jsonify, request
 from flask import make_response
-from flask import request
 import zipfile
 import os
 from jinja2 import Template
@@ -14,8 +13,9 @@ def home():
 
 @app.route('/generate_project', methods=['POST'])
 def generate_project():
+    led_pin = request.form['led_pin']
     template = Template(open('templates/blink.ino.j2').read())
-    ino_content = template.render()
+    ino_content = template.render(led_pin=led_pin)
     zip_file = zipfile.ZipFile('blink.zip', 'w')
     zip_file.writestr('blink/blink.ino', ino_content)
     zip_file.close()
