@@ -63,7 +63,9 @@ def generate_project():
     shutil.rmtree(repo_name)
 
     # Send the zip file as a download
-    return send_file(zip_file_name, as_attachment=True)
+    response = make_response(send_file(zip_file_name, as_attachment=True))
+    response.headers['Content-Disposition'] = 'attachment; filename="blink.zip"'
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
