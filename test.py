@@ -45,6 +45,7 @@ class TestGenerateProject(unittest.TestCase):
                     self.assertIn(f'const int maxPX = {num_pixels * 180};', lines)
                     self.assertIn(f'char apName[] = "{ap_name}";', lines)
                     self.assertIn(f'char apPass[] = "{ap_pass}";', lines)
+                    self.assertIn('boolean auxillary = false;', lines)
             finally:
                 zip_file.close()
 
