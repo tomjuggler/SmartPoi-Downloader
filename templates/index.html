@@ -3,14 +3,44 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
-    .header-container {
+    body {
+      background-color: #000;
+    }
+   .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-    .spinning-wheel {
+   .spinning-wheel {
         margin: 20px;
       }
+   .card {
+      background-color: #333;
+    }
+   .card-body {
+      color: #fff;
+    }
+   .form-control {
+      background-color: #444;
+      color: #fff;
+      border-color: #555;
+    }
+   .form-control:focus {
+      background-color: #444;
+      color: #fff;
+      border-color: #555;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    }
+   .btn-primary {
+      background-color: #555;
+      color: #fff;
+      border-color: #666;
+    }
+   .btn-primary:hover {
+      background-color: #666;
+      color: #fff;
+      border-color: #777;
+    }
     </style>
   </head>
   <body>
@@ -34,7 +64,7 @@
                 </circle>
               </svg>
             </div>
-            <h1 class="mb-4">Smartpoi Firmware Downloader</h1>
+            <h1 class="mb-4" style="color: #fff;">Smartpoi Firmware Downloader</h1>
             <div class="spinning-wheel">
               <svg width="100" height="100" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="40" fill="#FF33CC" stroke="#FFFFFF" stroke-width="2">
@@ -57,31 +87,31 @@
               <form id="project-form">
                 <div class="form-row">
                   <div class="form-group col-md-4">
-                    <label for="data_pin">Data Pin:</label>
+                    <label for="data_pin" style="color: #fff;">Data Pin:</label>
                     <input type="text" class="form-control" id="data_pin" value="D2">
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="clock_pin">Clock Pin:</label>
+                    <label for="clock_pin" style="color: #fff;">Clock Pin:</label>
                     <input type="text" class="form-control" id="clock_pin" value="D1">
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="num_pixels">Number of Pixels:</label>
+                    <label for="num_pixels" style="color: #fff;">Number of Pixels:</label>
                     <input type="number" class="form-control" id="num_pixels" value="120">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="ap_name">Access Point Name:</label>
+                    <label for="ap_name" style="color: #fff;">Access Point Name:</label>
                     <input type="text" class="form-control" id="ap_name" value="Smart_Poi7">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="ap_pass">Access Point Password:</label>
+                    <label for="ap_pass" style="color: #fff;">Access Point Password:</label>
                     <input type="text" class="form-control" id="ap_pass" value="SmartOne">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="led_type">LED Type:</label>
+                    <label for="led_type" style="color: #fff;">LED Type:</label>
                     <select class="form-control" id="led_type">
                       <option value="WS2812">WS2812</option>
                       <option value="APA102">APA102</option>
@@ -105,8 +135,8 @@
         var apPass = document.getElementById('ap_pass').value;
         var ledType = document.getElementById('led_type').value;
         fetch('/generate_project', {method: 'POST', body: new URLSearchParams({data_pin: dataPin, clock_pin: clockPin, num_pixels: numPixels, ap_name: apName, ap_pass: apPass, led_type: ledType})})
-   .then(response => response.blob())
-   .then(blob => {
+  .then(response => response.blob())
+  .then(blob => {
           const url = window.URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
