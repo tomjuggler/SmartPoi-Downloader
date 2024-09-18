@@ -59,11 +59,12 @@ def generate_project():
         lines = f.readlines()
     with open(initialize_ino_path, 'w') as f:
         for line in lines:
+            line = line.lstrip()
             if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
                 if led_type == 'APA102':
                     f.write(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
                 else:
-                    f.write(line)
+                    f.write(line + '\n')
             else:
                 f.write(line)
 
