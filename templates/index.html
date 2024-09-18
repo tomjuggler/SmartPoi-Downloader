@@ -6,9 +6,9 @@
     <script>
       function generateProject() {
         var ledPin = document.getElementById('led_pin').value;
-        fetch('/generate_project', {method: 'POST', body: 'led_pin=' + ledPin})
-        .then(response => response.blob())
-        .then(blob => {
+        fetch('/generate_project', {method: 'POST', body: new URLSearchParams({led_pin: ledPin})})
+      .then(response => response.blob())
+      .then(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
