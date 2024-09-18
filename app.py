@@ -23,6 +23,7 @@ def generate_project():
     # Get the values from the request
     data_pin = request.form['data_pin']
     clock_pin = request.form['clock_pin']
+    num_pixels = int(request.form['num_pixels'])
 
     # Modify the main.ino file
     main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
@@ -34,6 +35,10 @@ def generate_project():
                 f.write(f'#define DATA_PIN {data_pin}\n')
             elif line.startswith('#define CLOCK_PIN'):
                 f.write(f'#define CLOCK_PIN {clock_pin}\n')
+            elif line.startswith('#define NUM_LEDS'):
+                f.write(f'#define NUM_LEDS {num_pixels + 1}\n')
+            elif line.startswith('#define NUM_PX'):
+                f.write(f'#define NUM_PX {num_pixels}\n')
             else:
                 f.write(line)
 
