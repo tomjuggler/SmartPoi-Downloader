@@ -14,5 +14,12 @@
 - Mistral 7B is going to shut my computer down in a minute. My music is stuttering.... takes 20 min in my experience to do anything at all. Why bother (on CPU)
 - Last try with "TinyLLAMA": It might work.. on GPU or TPU. Nope. The LLM did not conform to the edit format. 
 
+Also try these: 
+- openrouter/meta-llama/llama-3.1-8b-instruct:free
+- openrouter/mattshumer/reflection-70b:free
+- openrouter/nousresearch/hermes-3-llama-3.1-405b:free
+- openrouter/huggingfaceh4/zephyr-7b-beta:free
+- openrouter/microsoft/phi-3-medium-128k-instruct:free
+
 # Test of paid LLM's (some of these are much more capable than the above..) 
 1. 
