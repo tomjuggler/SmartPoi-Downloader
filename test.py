@@ -1,6 +1,7 @@
 import unittest
 import random
 import string
+import zipfile  # Add this line
 from app import generate_project
 
 class TestGenerateProject(unittest.TestCase):
