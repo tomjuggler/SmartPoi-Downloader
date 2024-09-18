@@ -1,8 +1,9 @@
 import unittest
 import random
 import string
-import zipfile  # Add this line
+import zipfile
 from app import generate_project
+from unittest.mock import patch  # Add this line
 
 class TestGenerateProject(unittest.TestCase):
 
@@ -12,7 +13,7 @@ class TestGenerateProject(unittest.TestCase):
         clock_pin = ''.join(random.choices(string.ascii_uppercase + string.digits, k=2))
 
         # Call generate_project with random data
-        with unittest.mock.patch('app.request') as mock_request:
+        with patch('app.request') as mock_request:  # Update this line
             mock_request.form = {'data_pin': data_pin, 'clock_pin': clock_pin}
             response = generate_project()
 
