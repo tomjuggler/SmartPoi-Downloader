@@ -52,9 +52,9 @@ class TestGenerateProject(unittest.TestCase):
                 with zip_file.open('main/initalize.ino') as f:
                     lines = [line.decode('utf-8').strip() for line in f.readlines()]
                     if led_type == 'APA102':
-                        self.assertIn(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);', lines)
+                        self.assertIn(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);'.strip(), [line.strip() for line in lines])
                     else:
-                        self.assertIn(f'LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);', lines)
+                        self.assertIn(f'LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'.strip(), [line.strip() for line in lines])
             finally:
                 zip_file.close()
 
