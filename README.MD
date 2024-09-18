@@ -1,6 +1,6 @@
 ### Test of FREE LLM's in Aider AI Coding Assistant
 
-1. LLama 3.1 (Via OpenRouter) openrouter/meta-llama/llama-3-8b-instruct:free 
+1. LLama 3 (Via OpenRouter) openrouter/meta-llama/llama-3-8b-instruct:free 
 - Works. Test project setup succeeded with one prompt! 
 - For simple projects, this LLM does a great job. It's helpful for setting things up and basic boilerplate code. 
 2. Mistral openrouter/mistralai/mistral-7b-instruct:free 
