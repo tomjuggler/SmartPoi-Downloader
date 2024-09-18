@@ -19,6 +19,9 @@ class TestGenerateProject(unittest.TestCase):
                 mock_request.form = {'data_pin': data_pin, 'clock_pin': clock_pin}
                 response = generate_project()
 
+            # Set the response object to not be in direct passthrough mode
+            response.direct_passthrough = False
+
             # Check that the response is a zip file
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.mimetype, 'application/zip')
