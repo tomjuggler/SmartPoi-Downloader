@@ -20,6 +20,23 @@ def generate_project():
     # Clone the repository
     subprocess.run(['git', 'clone', repo_url, repo_name])
 
+    # Get the values from the request
+    data_pin = request.form['data_pin']
+    clock_pin = request.form['clock_pin']
+
+    # Modify the main.ino file
+    main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
+    with open(main_ino_path, 'r') as f:
+        lines = f.readlines()
+    with open(main_ino_path, 'w') as f:
+        for line in lines:
+            if line.startswith('#define DATA_PIN'):
+                f.write(f'#define DATA_PIN {data_pin}\n')
+            elif line.startswith('#define CLOCK_PIN'):
+                f.write(f'#define CLOCK_PIN {clock_pin}\n')
+            else:
+                f.write(line)
+
     # Create the zip file
     zip_file_name = 'SmartPoi-Firmware.zip'
     zip_file = zipfile.ZipFile(zip_file_name, 'w')
