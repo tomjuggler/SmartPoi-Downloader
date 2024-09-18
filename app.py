@@ -17,8 +17,13 @@ def generate_project():
     repo_url = 'https://github.com/tomjuggler/SmartPoi-Firmware.git'
     repo_name = 'SmartPoi-Firmware'
 
-    # Clone the repository
-    subprocess.run(['git', 'clone', repo_url, repo_name])
+    # Check if the repository exists, if not clone it
+    if not os.path.exists(repo_name):
+        subprocess.run(['git', 'clone', repo_url, repo_name])
+
+    # Check for updates and pull if necessary
+    subprocess.run(['git', '-C', repo_name, 'fetch', 'origin'])
+    subprocess.run(['git', '-C', repo_name, 'merge', 'origin/master'])
 
     # Get the values from the request
     data_pin = request.form['data_pin']
@@ -76,9 +81,6 @@ def generate_project():
             file_path = os.path.join(root, file)
             zip_file.write(file_path, os.path.relpath(file_path, repo_name))
     zip_file.close()
-
-    # Remove the cloned repository
-    shutil.rmtree(repo_name)
 
     # Send the zip file as a download
     response = make_response(send_file(zip_file_name, as_attachment=True))
