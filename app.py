@@ -53,8 +53,8 @@ def generate_project():
             else:
                 f.write(line)
 
-    # Modify the initialize.ino file
-    initialize_ino_path = os.path.join(repo_name, 'main', 'initialize.ino')
+    # Modify the initalize.ino file
+    initialize_ino_path = os.path.join(repo_name, 'main', 'initalize.ino')
     with open(initialize_ino_path, 'r') as f:
         lines = f.readlines()
     with open(initialize_ino_path, 'w') as f:

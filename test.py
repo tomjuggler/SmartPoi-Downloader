@@ -48,8 +48,8 @@ class TestGenerateProject(unittest.TestCase):
                     self.assertIn(f'char apPass[] = "{ap_pass}";', lines)
                     self.assertIn('boolean auxillary = false;', lines)
 
-                # Check that the initialize.ino file contains the expected values
-                with zip_file.open('main/initialize.ino') as f:
+                # Check that the initalize.ino file contains the expected values
+                with zip_file.open('main/initalize.ino') as f:
                     lines = [line.decode('utf-8').strip() for line in f.readlines()]
                     if led_type == 'APA102':
                         self.assertIn(f'FastLED.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);', lines)
