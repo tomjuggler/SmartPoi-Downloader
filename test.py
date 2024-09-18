@@ -33,9 +33,9 @@ class TestGenerateProject(unittest.TestCase):
 
             # Check that the main.ino file contains the expected values
             with zip_file.open('main/main.ino') as f:
-                lines = f.readlines()
-                self.assertIn(f'#define DATA_PIN {data_pin}'.encode(), lines)
-                self.assertIn(f'#define CLOCK_PIN {clock_pin}'.encode(), lines)
+                lines = [line.decode('utf-8').strip() for line in f.readlines()]
+                self.assertIn(f'#define DATA_PIN {data_pin}', lines)
+                self.assertIn(f'#define CLOCK_PIN {clock_pin}', lines)
 
 if __name__ == '__main__':
     unittest.main()
