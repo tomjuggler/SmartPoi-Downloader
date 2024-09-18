@@ -47,6 +47,8 @@ def generate_project():
                 f.write(f'char apName[] = "{ap_name}";\n')
             elif line.startswith('char apPass[]'):
                 f.write(f'char apPass[] = "{ap_pass}";\n')
+            elif line.startswith('boolean auxillary'):                                                                                                                        
+                f.write('boolean auxillary = false;\n')
             else:
                 f.write(line)
 
