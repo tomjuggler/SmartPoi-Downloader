@@ -4,6 +4,7 @@ import string
 import zipfile
 from app import generate_project, app
 from unittest.mock import patch
+from io import BytesIO
 
 class TestGenerateProject(unittest.TestCase):
 
@@ -27,7 +28,7 @@ class TestGenerateProject(unittest.TestCase):
             self.assertEqual(response.mimetype, 'application/zip')
 
             # Check that the zip file contains the expected files
-            zip_file = zipfile.ZipFile(response.get_data())
+            zip_file = zipfile.ZipFile(BytesIO(response.get_data()))
             self.assertIn('SmartPoi-Firmware/main/main.ino', zip_file.namelist())
 
             # Check that the main.ino file contains the expected values
