@@ -61,7 +61,7 @@ def generate_project():
         for line in lines:
             if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
                 if led_type == 'APA102':
-                    f.write(f'FastLED.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
+                    f.write(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
                 else:
                     f.write(line)
             else:
