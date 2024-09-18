@@ -2,7 +2,8 @@ from flask import Flask, render_template, send_file, jsonify, request
 from flask import make_response
 import zipfile
 import os
-from jinja2 import Template
+import subprocess
+import shutil
 
 app = Flask(__name__)
 
@@ -13,13 +14,26 @@ def home():
 
 @app.route('/generate_project', methods=['POST'])
 def generate_project():
-    led_pin = request.form['led_pin']
-    template = Template(open('templates/blink.ino.j2').read())
-    ino_content = template.render(led_pin=led_pin)
-    zip_file = zipfile.ZipFile('blink.zip', 'w')
-    zip_file.writestr('blink/blink.ino', ino_content)
+    repo_url = 'https://github.com/tomjuggler/SmartPoi-Firmware.git'
+    repo_name = 'SmartPoi-Firmware'
+
+    # Clone the repository
+    subprocess.run(['git', 'clone', repo_url, repo_name])
+
+    # Create the zip file
+    zip_file_name = 'SmartPoi-Firmware.zip'
+    zip_file = zipfile.ZipFile(zip_file_name, 'w')
+    for root, dirs, files in os.walk(repo_name):
+        for file in files:
+            file_path = os.path.join(root, file)
+            zip_file.write(file_path, os.path.relpath(file_path, repo_name))
     zip_file.close()
-    return send_file('blink.zip', as_attachment=True)
+
+    # Remove the cloned repository
+    shutil.rmtree(repo_name)
+
+    # Send the zip file as a download
+    return send_file(zip_file_name, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
