@@ -24,6 +24,8 @@ def generate_project():
     data_pin = request.form['data_pin']
     clock_pin = request.form['clock_pin']
     num_pixels = int(request.form['num_pixels'])
+    ap_name = request.form['ap_name']
+    ap_pass = request.form['ap_pass']
 
     # Modify the main.ino file
     main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
@@ -39,6 +41,12 @@ def generate_project():
                 f.write(f'#define NUM_LEDS {num_pixels + 1}\n')
             elif line.startswith('#define NUM_PX'):
                 f.write(f'#define NUM_PX {num_pixels}\n')
+            elif line.startswith('const int maxPX'):
+                f.write(f'const int maxPX = {num_pixels * 180};\n')
+            elif line.startswith('char apName[]'):
+                f.write(f'char apName[] = "{ap_name}";\n')
+            elif line.startswith('char apPass[]'):
+                f.write(f'char apPass[] = "{ap_pass}";\n')
             else:
                 f.write(line)
 
