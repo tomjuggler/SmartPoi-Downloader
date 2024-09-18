@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="generateProject()">Generate Arduino Project</button>
+    <script>
+      function generateProject() {
+        fetch('/generate_project', {method: 'POST'})
+         .then(response => response.blob())
+         .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'blink.zip';
+            a.click();
+          });
+      }
+    </script>
+  </body>
+</html>
