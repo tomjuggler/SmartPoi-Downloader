@@ -29,10 +29,10 @@ class TestGenerateProject(unittest.TestCase):
 
             # Check that the zip file contains the expected files
             zip_file = zipfile.ZipFile(BytesIO(response.get_data()))
-            self.assertIn('SmartPoi-Firmware/main/main.ino', zip_file.namelist())
+            self.assertIn('main/main.ino', zip_file.namelist())
 
             # Check that the main.ino file contains the expected values
-            with zip_file.open('SmartPoi-Firmware/main/main.ino') as f:
+            with zip_file.open('main/main.ino') as f:
                 lines = f.readlines()
                 self.assertIn(f'#define DATA_PIN {data_pin}'.encode(), lines)
                 self.assertIn(f'#define CLOCK_PIN {clock_pin}'.encode(), lines)
