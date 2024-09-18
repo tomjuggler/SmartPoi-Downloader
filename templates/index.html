@@ -35,6 +35,15 @@
                     <input type="text" class="form-control" id="ap_pass" value="SmartOne">
                   </div>
                 </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="led_type">LED Type:</label>
+                    <select class="form-control" id="led_type">
+                      <option value="WS2812">WS2812</option>
+                      <option value="APA102">APA102</option>
+                    </select>
+                  </div>
+                </div>
                 <button class="btn btn-primary" id="generate-btn">Generate Arduino Project</button>
               </form>
             </div>
@@ -50,9 +59,10 @@
         var numPixels = document.getElementById('num_pixels').value;
         var apName = document.getElementById('ap_name').value;
         var apPass = document.getElementById('ap_pass').value;
-        fetch('/generate_project', {method: 'POST', body: new URLSearchParams({data_pin: dataPin, clock_pin: clockPin, num_pixels: numPixels, ap_name: apName, ap_pass: apPass})})
-       .then(response => response.blob())
-       .then(blob => {
+        var ledType = document.getElementById('led_type').value;
+        fetch('/generate_project', {method: 'POST', body: new URLSearchParams({data_pin: dataPin, clock_pin: clockPin, num_pixels: numPixels, ap_name: apName, ap_pass: apPass, led_type: ledType})})
+      .then(response => response.blob())
+      .then(blob => {
           const url = window.URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;

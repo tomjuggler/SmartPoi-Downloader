@@ -15,12 +15,13 @@ class TestGenerateProject(unittest.TestCase):
         num_pixels = random.randint(1, 100)
         ap_name = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
         ap_pass = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+        led_type = random.choice(['WS2812', 'APA102'])
 
         # Create a request context
         with app.test_request_context():
             # Call generate_project with random data
             with patch('app.request') as mock_request:
-                mock_request.form = {'data_pin': data_pin, 'clock_pin': clock_pin, 'num_pixels': str(num_pixels), 'ap_name': ap_name, 'ap_pass': ap_pass}
+                mock_request.form = {'data_pin': data_pin, 'clock_pin': clock_pin, 'num_pixels': str(num_pixels), 'ap_name': ap_name, 'ap_pass': ap_pass, 'led_type': led_type}
                 response = generate_project()
 
             # Set the response object to not be in direct passthrough mode
@@ -46,6 +47,14 @@ class TestGenerateProject(unittest.TestCase):
                     self.assertIn(f'char apName[] = "{ap_name}";', lines)
                     self.assertIn(f'char apPass[] = "{ap_pass}";', lines)
                     self.assertIn('boolean auxillary = false;', lines)
+
+                # Check that the initialize.ino file contains the expected values
+                with zip_file.open('main/initialize.ino') as f:
+                    lines = [line.decode('utf-8').strip() for line in f.readlines()]
+                    if led_type == 'APA102':
+                        self.assertIn(f'FastLED.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);', lines)
+                    else:
+                        self.assertIn(f'LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);', lines)
             finally:
                 zip_file.close()
 

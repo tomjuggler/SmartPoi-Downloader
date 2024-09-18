@@ -26,6 +26,7 @@ def generate_project():
     num_pixels = int(request.form['num_pixels'])
     ap_name = request.form['ap_name']
     ap_pass = request.form['ap_pass']
+    led_type = request.form['led_type']
 
     # Modify the main.ino file
     main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
@@ -49,6 +50,20 @@ def generate_project():
                 f.write(f'char apPass[] = "{ap_pass}";\n')
             elif line.startswith('boolean auxillary'):                                                                                                                        
                 f.write('boolean auxillary = false;\n')
+            else:
+                f.write(line)
+
+    # Modify the initialize.ino file
+    initialize_ino_path = os.path.join(repo_name, 'main', 'initialize.ino')
+    with open(initialize_ino_path, 'r') as f:
+        lines = f.readlines()
+    with open(initialize_ino_path, 'w') as f:
+        for line in lines:
+            if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
+                if led_type == 'APA102':
+                    f.write(f'FastLED.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
+                else:
+                    f.write(line)
             else:
                 f.write(line)
 
