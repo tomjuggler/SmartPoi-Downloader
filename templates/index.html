@@ -56,14 +56,18 @@
         text-shadow: 0 0 10px #fff;
       }
     }
- .crt-heading {
+.crt-heading {
       animation: crt-pulse 1s infinite;
     }
-   .spinner-border.text-primary {
+  .spinner-border.text-primary {
       border-color: #fff;
     }
-   .sr-only {
+  .sr-only {
       color: #fff;
+    }
+   .spinner-border {
+      border-color: #fff;
+      background-color: #333;
     }
     </style>
   </head>
@@ -174,8 +178,8 @@
         document.getElementById('loading-spinner').style.display = 'block';
         
         fetch('/generate_project', {method: 'POST', body: new URLSearchParams({data_pin: dataPin, clock_pin: clockPin, num_pixels: numPixels, ap_name: apName, ap_pass: apPass, led_type: ledType})})
-      .then(response => response.blob())
-      .then(blob => {
+     .then(response => response.blob())
+     .then(blob => {
           // Hide the loading spinner
           document.getElementById('loading-spinner').style.display = 'none';
           
