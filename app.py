@@ -23,7 +23,7 @@ def generate_project():
 
     # Check for updates and pull if necessary
     subprocess.run(['git', '-C', repo_name, 'fetch', 'origin'])
-    subprocess.run(['git', '-C', repo_name, 'merge', 'origin/master'])
+    subprocess.run(['git', '-C', repo_name, 'merge', 'origin/main'])
 
     # Get the values from the request
     data_pin = request.form['data_pin']
