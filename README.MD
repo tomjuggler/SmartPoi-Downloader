@@ -9,6 +9,7 @@
 - Works. Test prompt setup succeeded with two prompts and one bug fix..
 - This is apparently the best at coding (according to Aider devs) 
 - Did the job, maybe it is the best, but LLAMA 8B is also fine. 
+- Google seems to rate limit a lot!
 4. Some LLM's in Ollama running locally on Laptop CPU (Slow) Let's try this lol
 - yi-coder is just too slow
 - Mistral 7B is going to shut my computer down in a minute. My music is stuttering.... takes 20 min in my experience to do anything at all. Why bother (on CPU)
@@ -16,7 +17,8 @@
 
 Also try these: 
 - openrouter/meta-llama/llama-3.1-8b-instruct:free
-- openrouter/mattshumer/reflection-70b:free
+- openrouter/mattshumer/reflection-70b:free *pretty good!*
+- gemini/gemini-1.5-flash-8b-exp-0827 *best free one from google.*
 - openrouter/nousresearch/hermes-3-llama-3.1-405b:free
 - openrouter/huggingfaceh4/zephyr-7b-beta:free
 - openrouter/microsoft/phi-3-medium-128k-instruct:free
