@@ -4,6 +4,7 @@ import zipfile
 import os
 import subprocess
 import shutil
+import re
 
 app = Flask(__name__)
 
@@ -20,7 +21,10 @@ def generate_project():
     # Check if the repository exists, if not clone it
     if not os.path.exists(repo_name):
         subprocess.run(['git', 'clone', repo_url, repo_name])
-
+    # Stash local changes before switching branches
+    subprocess.run(['git', '-C', repo_name, 'stash'])
+    # Switch to main branch before pulling updates
+    subprocess.run(['git', '-C', repo_name, 'checkout', 'main'])
     # Check for updates and pull if necessary
     subprocess.run(['git', '-C', repo_name, 'fetch', 'origin'])
     subprocess.run(['git', '-C', repo_name, 'merge', 'origin/main'])
@@ -43,6 +47,16 @@ def generate_project():
                 f.write(f'#define DATA_PIN {data_pin}\n')
             elif line.startswith('#define CLOCK_PIN'):
                 f.write(f'#define CLOCK_PIN {clock_pin}\n')
+            elif re.match(r'^\s*//\s*#define LED_APA102', line):
+                if led_type == 'APA102':
+                    f.write('#define LED_APA102')
+                else:
+                    f.write(re.sub(r'^\s*//\s*#define LED_APA102', '// #define LED_APA102', line))
+            elif re.match(r'^\s*#define LED_APA102', line):
+                if led_type == 'APA102':
+                    f.write('#define LED_APA102')
+                else:
+                    f.write(re.sub(r'^\s*#define LED_APA102', '// #define LED_APA102', line))
             elif line.startswith('#define NUM_LEDS'):
                 f.write(f'#define NUM_LEDS {num_pixels + 1}\n')
             elif line.startswith('#define NUM_PX'):
@@ -58,20 +72,20 @@ def generate_project():
             else:
                 f.write(line)
 
-    # Modify the initalize.ino file
-    initialize_ino_path = os.path.join(repo_name, 'main', 'initalize.ino')
-    with open(initialize_ino_path, 'r') as f:
-        lines = f.readlines()
-    with open(initialize_ino_path, 'w') as f:
-        for line in lines:
-            line = line.lstrip()
-            if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
-                if led_type == 'APA102':
-                    f.write(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
-                else:
-                    f.write(line + '\n')
-            else:
-                f.write(line)
+    # Modify the initalize.ino file - old code not using
+    # initialize_ino_path = os.path.join(repo_name, 'main', 'initalize.ino')
+    # with open(initialize_ino_path, 'r') as f:
+    #     lines = f.readlines()
+    # with open(initialize_ino_path, 'w') as f:
+    #     for line in lines:
+    #         line = line.lstrip()
+    #         if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
+    #             if led_type == 'APA102':
+    #                 f.write(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
+    #             else:
+    #                 f.write(line + '\n')
+    #         else:
+    #             f.write(line)
 
     # Create the zip file
     zip_file_name = 'SmartPoi-Firmware.zip'
