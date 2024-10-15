@@ -36,7 +36,14 @@ def generate_project():
     ap_name = request.form['ap_name']
     ap_pass = request.form['ap_pass']
     led_type = request.form['led_type']
+    horizontal_pixels = 180 # todo: this is too large for 100 - fix below using better hack:
 
+    if num_pixels > 100:
+        horizontal_pixels = 160
+    if num_pixels > 120: 
+        horizontal_pixels = 140
+    if num_pixels > 140: 
+        horizontal_pixels = num_pixels 
     # Modify the main.ino file
     main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
     with open(main_ino_path, 'r') as f:
@@ -62,7 +69,7 @@ def generate_project():
             elif line.startswith('#define NUM_PX'):
                 f.write(f'#define NUM_PX {num_pixels}\n')
             elif line.startswith('const int maxPX'):
-                f.write(f'const int maxPX = {num_pixels * 180};\n')
+                f.write(f'const int maxPX = {num_pixels * horizontal_pixels};\n')
             elif line.startswith('char apName[]'):
                 f.write(f'char apName[] = "{ap_name}";\n')
             elif line.startswith('char apPass[]'):
