@@ -321,11 +321,12 @@ def check_compressed_images(size):
         with open(bin_path, "rb") as f:
             binary_data = f.read()
         result_image = convert_8bit_color_to_image(binary_data, size)
-
+        image_name = os.path.splitext(bin_file)[0]
+        print(f'showing image {image_name}')
         # Show the result image with a title
         show_image_with_title(result_image, "Compressed and Converted Image")
 
 
 if __name__ == "__main__":
-    # add_compressed_images_for(36)
-    check_compressed_images(36)
+    add_compressed_images_for(72) # add compressed images to correct folder using size
+    # check_compressed_images(36) # test check compressed images using tk
