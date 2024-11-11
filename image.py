@@ -331,5 +331,10 @@ def check_compressed_images(size):
 
 
 if __name__ == "__main__":
-    add_compressed_images_for(72) # add compressed images to correct folder using size
-    # check_compressed_images(36) # test check compressed images using tk
+    # add_compressed_images_for(36) # add compressed images to correct folder using size
+    # add_compressed_images_for(60)
+    # add_compressed_images_for(72)
+    # add_compressed_images_for(120)
+    # add_compressed_images_for(144)
+    
+    check_compressed_images(144) # test check compressed images using tk
