@@ -285,13 +285,16 @@ def add_compressed_images_for(size):
     image_dir = "static/images"
     image_files = [f for f in os.listdir(image_dir) if f.endswith(".jpg")]
 
-    for image_file in image_files:
+    # Define the list of filenames to use
+    filenames = [chr(i) + '.bin' for i in range(ord('a'), ord('z') + 1)]
+
+    for image_file, filename in zip(image_files, filenames):
         image_name = os.path.splitext(image_file)[0]
         image_path = os.path.join(image_dir, image_file)
         compressed_data = compress_and_convert_image(image_name, size)
-        print(f"saving {image_name}")
-        # Save the compressed data to the appropriate directory with .bin extension
-        save_path = os.path.join(save_dir, f"{image_name}.bin")
+        print(f"saving {filename}")
+        # Save the compressed data to the appropriate directory with the specified filename
+        save_path = os.path.join(save_dir, filename)
         with open(save_path, "wb") as f:
             f.write(compressed_data)
 
