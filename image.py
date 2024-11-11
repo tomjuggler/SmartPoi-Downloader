@@ -76,7 +76,7 @@ def compress_image_to_8bit_color(input_image, size):
 
     Args:
         input_image (PIL.Image): The input image.
-        size (int): The size of the POI (Point of Interest).
+        size (int): The size of the POI.
 
     Returns:
         bytes: The binary data of the compressed image.
@@ -238,12 +238,22 @@ def rotate_visual_poi_style(input_image, basewidth):
     return newImg
 
 
-def compress_and_convert_image(image_name):
-    """Uses the compress_image_to_8bit_color and convert_8bit_color_to_image functions."""
+def compress_and_convert_image(image_name, size):
+    """
+    Uses the compress_image_to_8bit_color function to create .bin file from image
+    
+    Args: 
+        image_name (string): name of the image in static/images folder
+        size (int): The size of the POI. 
+
+    Returns: 
+        compressed_data: the .bin file
+    
+    """
     # Construct the full path to the image
     image_path = os.path.join('static/images', image_name + '.bin')
     input_image = Image.open(image_path)
     
     # Compress the image to 8-bit color
-    compressed_data = compress_image_to_8bit_color(input_image)
+    compressed_data = compress_image_to_8bit_color(input_image, size)
     return compressed_data
