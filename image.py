@@ -257,3 +257,31 @@ def compress_and_convert_image(image_name, size):
     # Compress the image to 8-bit color
     compressed_data = compress_image_to_8bit_color(input_image, size)
     return compressed_data
+
+def add_compressed_images_for(size):
+    """
+    Compresses all images in the static/images directory and saves the .bin files to the appropriate directory based on the size.
+
+    Args:
+        size (int): The size of the POI.
+    """
+    # Define the base directory for saving .bin files
+    base_dir = 'static/bin'
+    size_dirs = {36: 'bin_36', 60: 'bin_60', 72: 'bin_72', 120: 'bin_120', 144: 'bin_144'}
+    
+    # Determine the directory to save the .bin files
+    save_dir = os.path.join(base_dir, size_dirs.get(size, 'bin_'))
+    os.makedirs(save_dir, exist_ok=True)
+    
+    # List all image files in the static/images directory
+    image_dir = 'static/images'
+    image_files = [f for f in os.listdir(image_dir) if f.endswith('.bin')]
+    
+    for image_file in image_files:
+        image_name = os.path.splitext(image_file)[0]
+        compressed_data = compress_and_convert_image(image_name, size)
+        
+        # Save the compressed data to the appropriate directory
+        save_path = os.path.join(save_dir, f"{image_name}.bin")
+        with open(save_path, 'wb') as f:
+            f.write(compressed_data)
