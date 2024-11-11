@@ -241,22 +241,23 @@ def rotate_visual_poi_style(input_image, basewidth):
 def compress_and_convert_image(image_name, size):
     """
     Uses the compress_image_to_8bit_color function to create .bin file from image
-    
-    Args: 
-        image_name (string): name of the image in static/images folder
-        size (int): The size of the POI. 
 
-    Returns: 
+    Args:
+        image_name (string): name of the image in static/images folder
+        size (int): The size of the POI.
+
+    Returns:
         compressed_data: the .bin file
-    
+
     """
     # Construct the full path to the image
-    image_path = os.path.join('static/images', image_name + '.bin')
+    image_path = os.path.join("static/images", image_name + ".bin")
     input_image = Image.open(image_path)
-    
+
     # Compress the image to 8-bit color
     compressed_data = compress_image_to_8bit_color(input_image, size)
     return compressed_data
+
 
 def add_compressed_images_for(size):
     """
@@ -266,22 +267,32 @@ def add_compressed_images_for(size):
         size (int): The size of the POI.
     """
     # Define the base directory for saving .bin files
-    base_dir = 'static/bin'
-    size_dirs = {36: 'bin_36', 60: 'bin_60', 72: 'bin_72', 120: 'bin_120', 144: 'bin_144'}
-    
+    base_dir = "static/bins"
+    size_dirs = {
+        36: "bin_36",
+        60: "bin_60",
+        72: "bin_72",
+        120: "bin_120",
+        144: "bin_144",
+    }
+
     # Determine the directory to save the .bin files
-    save_dir = os.path.join(base_dir, size_dirs.get(size, 'bin_'))
+    save_dir = os.path.join(base_dir, size_dirs.get(size, "bin_"))
     os.makedirs(save_dir, exist_ok=True)
-    
+
     # List all image files in the static/images directory
-    image_dir = 'static/images'
-    image_files = [f for f in os.listdir(image_dir) if f.endswith('.bin')]
-    
+    image_dir = "static/images"
+    image_files = [f for f in os.listdir(image_dir)]
+
     for image_file in image_files:
         image_name = os.path.splitext(image_file)[0]
         compressed_data = compress_and_convert_image(image_name, size)
-        
+        print(f'saving {image_name}')
         # Save the compressed data to the appropriate directory
         save_path = os.path.join(save_dir, f"{image_name}.bin")
-        with open(save_path, 'wb') as f:
+        with open(save_path, "wb") as f:
             f.write(compressed_data)
+
+
+if __name__ == "__main__":
+    add_compressed_images_for(36)
