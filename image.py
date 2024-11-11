@@ -318,6 +318,15 @@ def show_image_with_title(image, title):
 
 
 def check_compressed_images(size):
+    """
+    Checks all compressed .bin files in the appropriate directory based on the size and displays them using Tkinter.
+
+    Args:
+        size (int): The size of the POI.
+
+    Returns:
+        None
+    """
     # List all .jpg image files in the static/images directory
     bin_dir = "static/bins"
     specific_bin_dir = os.path.join(bin_dir, f"bin_{size}")
