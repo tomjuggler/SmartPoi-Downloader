@@ -250,8 +250,8 @@ def compress_and_convert_image(image_name, size):
         compressed_data: the .bin file
 
     """
-    # Construct the full path to the image
-    image_path = os.path.join("static/images", image_name + ".bin")
+    # Construct the full path to the .jpg image
+    image_path = os.path.join("static/images", image_name + ".jpg")
     input_image = Image.open(image_path)
 
     # Compress the image to 8-bit color
