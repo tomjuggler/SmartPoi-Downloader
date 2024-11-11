@@ -238,11 +238,12 @@ def rotate_visual_poi_style(input_image, basewidth):
     return newImg
 
 
-def compress_and_convert_image():
+def compress_and_convert_image(image_name):
     """Uses the compress_image_to_8bit_color and convert_8bit_color_to_image functions."""
-    # Load an image from a file path
-    image_path = '/home/tom/Pictures/SmartPoi/72px/AxelBelhache/Axel_03.jpg'
+    # Construct the full path to the image
+    image_path = os.path.join('static/images', image_name + '.bin')
     input_image = Image.open(image_path)
     
     # Compress the image to 8-bit color
     compressed_data = compress_image_to_8bit_color(input_image)
+    return compressed_data
