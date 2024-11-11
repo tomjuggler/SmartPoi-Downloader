@@ -326,6 +326,8 @@ def check_compressed_images(size):
 
     Returns:
         None
+
+    TODO: test case for non-defined sizes bin_
     """
     # List all .jpg image files in the static/images directory
     bin_dir = "static/bins"
@@ -349,4 +351,4 @@ if __name__ == "__main__":
     # add_compressed_images_for(120)
     # add_compressed_images_for(144)
     
-    check_compressed_images() # test check compressed images using tk
+    check_compressed_images(72) # test check compressed images using tk
