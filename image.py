@@ -266,6 +266,9 @@ def add_compressed_images_for(size):
 
     Args:
         size (int): The size of the POI.
+
+    Returns:
+        None
     """
     # Define the base directory for saving .bin files
     base_dir = "static/bins"
