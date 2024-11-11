@@ -349,4 +349,4 @@ if __name__ == "__main__":
     # add_compressed_images_for(120)
     # add_compressed_images_for(144)
     
-    check_compressed_images(144) # test check compressed images using tk
+    check_compressed_images() # test check compressed images using tk
