@@ -317,7 +317,10 @@ def check_compressed_images(size):
     specific_bin_dir = os.path.join(bin_dir, f"bin_{size}")
     bin_files = [f for f in os.listdir(specific_bin_dir) if f.endswith(".bin")]
     for bin_file in bin_files:
-        result_image = convert_8bit_color_to_image(bin_file, size)
+        bin_path = os.path.join(specific_bin_dir, bin_file)
+        with open(bin_path, "rb") as f:
+            binary_data = f.read()
+        result_image = convert_8bit_color_to_image(binary_data, size)
 
         # Show the result image with a title
         show_image_with_title(result_image, "Compressed and Converted Image")
