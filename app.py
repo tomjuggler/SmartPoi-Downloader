@@ -44,6 +44,31 @@ def generate_project():
         horizontal_pixels = 140
     if num_pixels > 140: 
         horizontal_pixels = num_pixels 
+    # Determine the correct directory in static/bins/bin_ based on num_pixels
+    size_dirs = {
+        36: "bin_36",
+        60: "bin_60",
+        72: "bin_72",
+        120: "bin_120",
+        144: "bin_144",
+    }
+    bin_dir = size_dirs.get(num_pixels, "bin_")
+    bin_path = os.path.join("static/bins", bin_dir)
+
+    # Create the data directory in the repo if it doesn't exist
+    data_path = os.path.join(repo_name, 'main', 'data')
+    os.makedirs(data_path, exist_ok=True)
+
+    # Remove all existing .bin files from the data directory
+    for file in os.listdir(data_path):
+        if file.endswith(".bin"):
+            os.remove(os.path.join(data_path, file))
+
+    # Copy new .bin files from the determined directory to the data directory
+    for file in os.listdir(bin_path):
+        if file.endswith(".bin"):
+            shutil.copy(os.path.join(bin_path, file), data_path)
+
     # Modify the main.ino file
     main_ino_path = os.path.join(repo_name, 'main', 'main.ino')
     with open(main_ino_path, 'r') as f:
