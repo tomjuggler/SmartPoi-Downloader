@@ -8,7 +8,8 @@ This module provides functions for image manipulation, including rotation, resiz
 import math
 import os
 
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageTk
+import tkinter as tk
 
 
 def rotate_image(file):
@@ -282,18 +283,46 @@ def add_compressed_images_for(size):
 
     # List all .jpg image files in the static/images directory
     image_dir = "static/images"
-    image_files = [f for f in os.listdir(image_dir) if f.endswith('.jpg')]
+    image_files = [f for f in os.listdir(image_dir) if f.endswith(".jpg")]
 
     for image_file in image_files:
         image_name = os.path.splitext(image_file)[0]
         image_path = os.path.join(image_dir, image_file)
         compressed_data = compress_and_convert_image(image_name, size)
-        print(f'saving {image_name}')
+        print(f"saving {image_name}")
         # Save the compressed data to the appropriate directory with .bin extension
         save_path = os.path.join(save_dir, f"{image_name}.bin")
         with open(save_path, "wb") as f:
             f.write(compressed_data)
 
 
+def show_image_with_title(image, title):
+    """Displays an image in a Tkinter window with a title (for debugging).
+
+    Args:
+        image: The image to display.
+        title: The title of the window.
+    """
+    root = tk.Tk()
+    root.title(title)
+    img = ImageTk.PhotoImage(image)
+    panel = tk.Label(root, image=img)
+    panel.pack(side="top", fill="both", expand="yes")
+    root.mainloop()
+
+
+def check_compressed_images(size):
+    # List all .jpg image files in the static/images directory
+    bin_dir = "static/bins"
+    specific_bin_dir = os.path.join(bin_dir, f"bin_{size}")
+    bin_files = [f for f in os.listdir(specific_bin_dir) if f.endswith(".bin")]
+    for bin_file in bin_files:
+        result_image = convert_8bit_color_to_image(bin_file, size)
+
+        # Show the result image with a title
+        show_image_with_title(result_image, "Compressed and Converted Image")
+
+
 if __name__ == "__main__":
-    add_compressed_images_for(36)
+    # add_compressed_images_for(36)
+    check_compressed_images(36)
