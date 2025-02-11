@@ -104,21 +104,6 @@ def generate_project():
             else:
                 f.write(line)
 
-    # Modify the initalize.ino file - old code not using
-    # initialize_ino_path = os.path.join(repo_name, 'main', 'initalize.ino')
-    # with open(initialize_ino_path, 'r') as f:
-    #     lines = f.readlines()
-    # with open(initialize_ino_path, 'w') as f:
-    #     for line in lines:
-    #         line = line.lstrip()
-    #         if line.startswith('LEDS.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);'):
-    #             if led_type == 'APA102':
-    #                 f.write(f'LEDS.addLeds<APA102, DATA_PIN, CLOCK_PIN, BGR>(leds, NUM_LEDS);\n')
-    #             else:
-    #                 f.write(line + '\n')
-    #         else:
-    #             f.write(line)
-
     # Create the zip file
     zip_file_name = 'SmartPoi-Firmware.zip'
     zip_file = zipfile.ZipFile(zip_file_name, 'w')
@@ -130,7 +115,7 @@ def generate_project():
 
     # Send the zip file as a download
     response = make_response(send_file(zip_file_name, as_attachment=True))
-    response.headers['Content-Disposition'] = 'attachment; filename="blink.zip"'
+    response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Firmware.zip"'
     return response
 
 if __name__ == '__main__':
