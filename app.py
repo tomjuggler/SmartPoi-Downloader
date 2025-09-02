@@ -118,5 +118,45 @@ def generate_project():
     response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Firmware.zip"'
     return response
 
+@app.route('/download_controls', methods=['POST'])
+def download_controls():
+    repo_url = 'https://github.com/tomjuggler/SmartPoi-js-utilities.git'
+    repo_name = 'SmartPoi-js-utilities'
+    combined_app_path = os.path.join(repo_name, 'Combined_APP')
+
+    # Check if the repository exists, if not clone it
+    if not os.path.exists(repo_name):
+        subprocess.run(['git', 'clone', repo_url, repo_name])
+    # Stash local changes before switching branches
+    subprocess.run(['git', '-C', repo_name, 'stash'])
+    # Switch to main branch before pulling updates
+    subprocess.run(['git', '-C', repo_name, 'checkout', 'main'])
+    # Check for updates and pull if necessary
+    subprocess.run(['git', '-C', repo_name, 'fetch', 'origin'])
+    subprocess.run(['git', '-C', repo_name, 'merge', 'origin/main'])
+
+    # Check if Combined_APP directory exists
+    if not os.path.exists(combined_app_path):
+        return "Combined_APP directory not found", 404
+
+    # Create the zip file with only Combined_APP folder
+    zip_file_name = 'SmartPoi-Controls.zip'
+    zip_file = zipfile.ZipFile(zip_file_name, 'w')
+    
+    # Walk through only the Combined_APP directory
+    for root, dirs, files in os.walk(combined_app_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            # Create archive name that preserves the Combined_APP folder structure
+            arcname = os.path.relpath(file_path, repo_name)
+            zip_file.write(file_path, arcname)
+            
+    zip_file.close()
+
+    # Send the zip file as a download
+    response = make_response(send_file(zip_file_name, as_attachment=True))
+    response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Controls.zip"'
+    return response
+
 if __name__ == '__main__':
     app.run()

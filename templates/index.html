@@ -154,6 +154,17 @@
               </div>
             </div>
           </div>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="text-white">SmartPoi Controls Download</h5>
+              <p class="text-white">Download the JavaScript utilities for controlling SmartPoi.</p>
+              <button class="btn btn-primary" id="download-controls-btn">Download SmartPoi Controls</button>
+              <div id="controls-loading-spinner" style="display: none;">
+                <div class="spinner-border text-primary" role="status"></div>
+                <span class="text-primary">Preparing controls download...</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -182,6 +193,25 @@
           a.download = 'SmartPoi_Firmware.zip';
           a.click();
         });
+      });
+      
+      document.getElementById('download-controls-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Display the loading spinner
+        document.getElementById('controls-loading-spinner').style.display = 'block';
+        
+        fetch('/download_controls', { method: 'POST' })
+          .then(response => response.blob())
+          .then(blob => {
+            // Hide the loading spinner
+            document.getElementById('controls-loading-spinner').style.display = 'none';
+            
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'SmartPoi_Controls.zip';
+            a.click();
+          });
       });
     </script>
   </body>
