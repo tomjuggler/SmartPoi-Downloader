@@ -122,6 +122,7 @@ def generate_project():
 def download_controls():
     repo_url = 'https://github.com/tomjuggler/SmartPoi-js-utilities.git'
     repo_name = 'SmartPoi-js-utilities'
+    combined_app_path = os.path.join(repo_name, 'Combined_APP')
 
     # Check if the repository exists, if not clone it
     if not os.path.exists(repo_name):
@@ -134,13 +135,22 @@ def download_controls():
     subprocess.run(['git', '-C', repo_name, 'fetch', 'origin'])
     subprocess.run(['git', '-C', repo_name, 'merge', 'origin/main'])
 
-    # Create the zip file
+    # Check if Combined_APP directory exists
+    if not os.path.exists(combined_app_path):
+        return "Combined_APP directory not found", 404
+
+    # Create the zip file with only Combined_APP folder
     zip_file_name = 'SmartPoi-Controls.zip'
     zip_file = zipfile.ZipFile(zip_file_name, 'w')
-    for root, dirs, files in os.walk(repo_name):
+    
+    # Walk through only the Combined_APP directory
+    for root, dirs, files in os.walk(combined_app_path):
         for file in files:
             file_path = os.path.join(root, file)
-            zip_file.write(file_path, os.path.relpath(file_path, repo_name))
+            # Create archive name that preserves the Combined_APP folder structure
+            arcname = os.path.relpath(file_path, repo_name)
+            zip_file.write(file_path, arcname)
+            
     zip_file.close()
 
     # Send the zip file as a download
