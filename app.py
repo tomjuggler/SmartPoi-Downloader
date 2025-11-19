@@ -228,15 +228,28 @@ def download_controls():
     response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Controls.zip"'
     return response
 
-@app.route('/api/checkin', methods=['GET'])
-def api_checkin():
-    # Log checkin with IP and timestamp
+@app.route('/api/smartpoi-checkin', methods=['GET'])
+def api_smartpoi_checkin():
+    # Log smartpoi checkin with IP and timestamp
     client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    checkin_logger.info(f'CHECKIN - IP: {client_ip}')
+    checkin_logger.info(f'SMARTPOI CHECKIN - IP: {client_ip}')
     
     return jsonify({
         'status': 'success',
-        'message': 'Checkin logged successfully',
+        'message': 'SmartPoi checkin logged successfully',
+        'timestamp': datetime.now().isoformat(),
+        'ip': client_ip
+    })
+
+@app.route('/api/controls-checkin', methods=['GET'])
+def api_controls_checkin():
+    # Log controls checkin with IP and timestamp
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    checkin_logger.info(f'CONTROLS CHECKIN - IP: {client_ip}')
+    
+    return jsonify({
+        'status': 'success',
+        'message': 'Controls checkin logged successfully',
         'timestamp': datetime.now().isoformat(),
         'ip': client_ip
     })
