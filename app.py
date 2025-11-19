@@ -5,8 +5,56 @@ import os
 import subprocess
 import shutil
 import re
+import logging
+from logging.handlers import RotatingFileHandler
+from datetime import datetime
 
 app = Flask(__name__)
+
+# Configure logging
+log_dir = '/var/log/smartpoi-downloader'
+os.makedirs(log_dir, exist_ok=True)
+
+# Access log handler
+access_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'access.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+access_handler.setLevel(logging.INFO)
+access_formatter = logging.Formatter('%(asctime)s - %(message)s')
+access_handler.setFormatter(access_formatter)
+
+# Usage log handler
+usage_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'usage.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+usage_handler.setLevel(logging.INFO)
+usage_formatter = logging.Formatter('%(asctime)s - %(message)s')
+usage_handler.setFormatter(usage_formatter)
+
+# Create loggers
+access_logger = logging.getLogger('access')
+access_logger.setLevel(logging.INFO)
+access_logger.addHandler(access_handler)
+
+usage_logger = logging.getLogger('usage')
+usage_logger.setLevel(logging.INFO)
+usage_logger.addHandler(usage_handler)
+
+# Middleware for access logging
+@app.before_request
+def log_access():
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    access_logger.info(f'ACCESS - IP: {client_ip} - {request.method} {request.path}')
+
+@app.after_request
+def log_response(response):
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    access_logger.info(f'RESPONSE - IP: {client_ip} - Status: {response.status_code}')
+    return response
 
 @app.route('/')
 @app.route('/home')
@@ -15,6 +63,10 @@ def home():
 
 @app.route('/generate_project', methods=['POST'])
 def generate_project():
+    # Log usage
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    usage_logger.info(f'USAGE - IP: {client_ip} - /generate_project - Started')
+    
     repo_url = 'https://github.com/tomjuggler/SmartPoi-Firmware.git'
     repo_name = 'SmartPoi-Firmware'
 
@@ -120,6 +172,10 @@ def generate_project():
 
 @app.route('/download_controls', methods=['POST'])
 def download_controls():
+    # Log usage
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    usage_logger.info(f'USAGE - IP: {client_ip} - /download_controls - Started')
+    
     repo_url = 'https://github.com/tomjuggler/SmartPoi-js-utilities.git'
     repo_name = 'SmartPoi-js-utilities'
     combined_app_path = os.path.join(repo_name, 'Combined_APP')
