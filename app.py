@@ -35,6 +35,16 @@ usage_handler.setLevel(logging.INFO)
 usage_formatter = logging.Formatter('%(asctime)s - %(message)s')
 usage_handler.setFormatter(usage_formatter)
 
+# Checkin log handler
+checkin_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'checkin.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+checkin_handler.setLevel(logging.INFO)
+checkin_formatter = logging.Formatter('%(asctime)s - %(message)s')
+checkin_handler.setFormatter(checkin_formatter)
+
 # Create loggers
 access_logger = logging.getLogger('access')
 access_logger.setLevel(logging.INFO)
@@ -43,6 +53,10 @@ access_logger.addHandler(access_handler)
 usage_logger = logging.getLogger('usage')
 usage_logger.setLevel(logging.INFO)
 usage_logger.addHandler(usage_handler)
+
+checkin_logger = logging.getLogger('checkin')
+checkin_logger.setLevel(logging.INFO)
+checkin_logger.addHandler(checkin_handler)
 
 # Middleware for access logging
 @app.before_request
@@ -213,6 +227,19 @@ def download_controls():
     response = make_response(send_file(zip_file_name, as_attachment=True))
     response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Controls.zip"'
     return response
+
+@app.route('/api/checkin', methods=['GET'])
+def api_checkin():
+    # Log checkin with IP and timestamp
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    checkin_logger.info(f'CHECKIN - IP: {client_ip}')
+    
+    return jsonify({
+        'status': 'success',
+        'message': 'Checkin logged successfully',
+        'timestamp': datetime.now().isoformat(),
+        'ip': client_ip
+    })
 
 if __name__ == '__main__':
     app.run()
