@@ -5,8 +5,70 @@ import os
 import subprocess
 import shutil
 import re
+import logging
+from logging.handlers import RotatingFileHandler
+from datetime import datetime
 
 app = Flask(__name__)
+
+# Configure logging
+log_dir = '/var/log/smartpoi-downloader'
+os.makedirs(log_dir, exist_ok=True)
+
+# Access log handler
+access_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'access.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+access_handler.setLevel(logging.INFO)
+access_formatter = logging.Formatter('%(asctime)s - %(message)s')
+access_handler.setFormatter(access_formatter)
+
+# Usage log handler
+usage_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'usage.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+usage_handler.setLevel(logging.INFO)
+usage_formatter = logging.Formatter('%(asctime)s - %(message)s')
+usage_handler.setFormatter(usage_formatter)
+
+# Checkin log handler
+checkin_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'checkin.log'),
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=5
+)
+checkin_handler.setLevel(logging.INFO)
+checkin_formatter = logging.Formatter('%(asctime)s - %(message)s')
+checkin_handler.setFormatter(checkin_formatter)
+
+# Create loggers
+access_logger = logging.getLogger('access')
+access_logger.setLevel(logging.INFO)
+access_logger.addHandler(access_handler)
+
+usage_logger = logging.getLogger('usage')
+usage_logger.setLevel(logging.INFO)
+usage_logger.addHandler(usage_handler)
+
+checkin_logger = logging.getLogger('checkin')
+checkin_logger.setLevel(logging.INFO)
+checkin_logger.addHandler(checkin_handler)
+
+# Middleware for access logging
+@app.before_request
+def log_access():
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    access_logger.info(f'ACCESS - IP: {client_ip} - {request.method} {request.path}')
+
+@app.after_request
+def log_response(response):
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    access_logger.info(f'RESPONSE - IP: {client_ip} - Status: {response.status_code}')
+    return response
 
 @app.route('/')
 @app.route('/home')
@@ -15,6 +77,10 @@ def home():
 
 @app.route('/generate_project', methods=['POST'])
 def generate_project():
+    # Log usage
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    usage_logger.info(f'USAGE - IP: {client_ip} - /generate_project - Started')
+    
     repo_url = 'https://github.com/tomjuggler/SmartPoi-Firmware.git'
     repo_name = 'SmartPoi-Firmware'
 
@@ -120,6 +186,10 @@ def generate_project():
 
 @app.route('/download_controls', methods=['POST'])
 def download_controls():
+    # Log usage
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    usage_logger.info(f'USAGE - IP: {client_ip} - /download_controls - Started')
+    
     repo_url = 'https://github.com/tomjuggler/SmartPoi-js-utilities.git'
     repo_name = 'SmartPoi-js-utilities'
     combined_app_path = os.path.join(repo_name, 'Combined_APP')
@@ -157,6 +227,32 @@ def download_controls():
     response = make_response(send_file(zip_file_name, as_attachment=True))
     response.headers['Content-Disposition'] = 'attachment; filename="SmartPoi_Controls.zip"'
     return response
+
+@app.route('/api/smartpoi-checkin', methods=['GET'])
+def api_smartpoi_checkin():
+    # Log smartpoi checkin with IP and timestamp
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    checkin_logger.info(f'SMARTPOI CHECKIN - IP: {client_ip}')
+    
+    return jsonify({
+        'status': 'success',
+        'message': 'SmartPoi checkin logged successfully',
+        'timestamp': datetime.now().isoformat(),
+        'ip': client_ip
+    })
+
+@app.route('/api/controls-checkin', methods=['GET'])
+def api_controls_checkin():
+    # Log controls checkin with IP and timestamp
+    client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    checkin_logger.info(f'CONTROLS CHECKIN - IP: {client_ip}')
+    
+    return jsonify({
+        'status': 'success',
+        'message': 'Controls checkin logged successfully',
+        'timestamp': datetime.now().isoformat(),
+        'ip': client_ip
+    })
 
 if __name__ == '__main__':
     app.run()

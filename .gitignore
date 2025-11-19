@@ -5,7 +5,9 @@ project/__pycache__/*
 __pycache__/*
 SmartPoi-Firmware/*
 SmartPoi-Firmware.zip
+SmartPoi-Firmware*
+SmartPoi-js-utilities*
+SmartPoi-Controls.zip
 SmartPoi-Firmware
-
 .env
 .venv
